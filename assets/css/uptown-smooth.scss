@@ -1,0 +1,299 @@
+$bg-color: #fbfbfb;
+$text-color: #212121;
+$card-bg-color: #F5F5F6;
+
+$site-width: 1200px;
+$header-height: 70px;
+$card-width: 1000px;
+$sidebar-width: 255px;
+
+$shadow: 0 2px 5px rgba(0,0,0,.26);
+$shadow-high: 0 4px 8px rgba(0,0,0,.26);
+
+a {
+	text-decoration: none;
+	color: red;
+}
+
+h1, h2, h3, h4 {
+	margin-bottom: 1em;
+	padding-top: 2em;
+	font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+	font-size: 2em;
+}
+
+h2, h3 {
+	font-size: 1.5em;
+}
+
+p {
+	line-height: 24px;
+}
+
+ol {
+	list-style-type: decimal;
+}
+
+ul {
+	list-style-type: disc;
+}
+
+li {
+	margin-left: 4em;
+}
+
+hr {
+	visibility: hidden;
+	height: 2em;
+}
+
+body {
+	background-color: $bg-color;
+	font-size: 16px;
+	font-family: 'Noto Sans', sans-serif;
+	color: $text-color;
+
+	// Logged-in admin styles.
+	&.admin-bar {
+		.header {
+			top: 32px;
+		}
+
+		.sidebar .branding {
+			margin-top: 32px;
+		}
+	}
+}
+
+.header {
+	position: fixed;
+	top: 0;
+	left: $sidebar-width;
+	width: 100%;
+	height: $header-height;
+	line-height: $header-height;
+	box-shadow: 0 4px 8px rgba(0,0,0,.26);
+	background-color: yellow;
+	font-family: 'Roboto', sans-serif;
+	font-size: 18px;
+	z-index: 5;
+	box-sizing: border-box;
+	max-width: calc(100% - 255px);
+
+	.search-field {
+		width: 40px;
+		height: 40px;
+		background: red;
+		overflow: hidden;
+		position: absolute;
+		right: 1em;
+		top: 1em;
+	}
+
+	.menu {
+		text-align: right;
+		position: absolute;
+		right: 64px;
+		top: 1em;
+		font-size: 16px;
+
+		li {
+			float: right;
+			margin-right: 2em;
+		}
+	}
+
+	.branding {
+		margin-left: 1em;
+	}
+
+	.header-content {
+		padding-left: 4em;
+		padding-right: 4em;
+	}
+}
+
+.site-container {
+	padding-top: $header-height;
+	width: 100%;
+	max-width: calc(100% - 255px);
+	margin-left: $sidebar-width;
+}
+
+article, #comments {
+	position: relative;
+	overflow: hidden;
+	padding-left: 5em;
+	padding-right: 5em;
+	padding-bottom: 4em;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.26);
+	border-radius: 6px;
+	font-size: 13px;
+	line-height: 24px;
+
+	p {
+		margin-bottom: 1.5em;
+	}
+
+	h1, h2, h3, h4 {
+		line-height: 1.5em;
+	}
+
+	li {
+		margin-bottom: 1em;
+	}
+
+	img {
+		box-shadow: $shadow;
+		border-radius: 3px;
+		max-width: 100%;
+		height: auto;
+		margin-left: -5em;
+
+		&.alignleft {
+			float: left;
+			margin-right: 2em;
+			margin-bottom: 2em;
+		}
+
+		&.alignright {
+			float: right;
+			margin-left: 2em;
+			margin-bottom: 2em;
+		}
+	}
+
+	&.has-post-thumbnail {
+		.thumbnail {
+			img {
+				max-width: 50vh;
+				width: 100%;
+				height: auto;
+				float: left;
+				margin-right: 2em;
+				margin-bottom: 2em;
+				margin-left: -5em;
+			}
+		}
+	}
+}
+
+.single article {
+	box-shadow: none;
+}
+
+#comments {
+	.comments-title {
+		padding-top: 0;
+		color: red;
+	}
+
+	img {
+		position: absolute;
+		margin: 0;
+		left: 0;
+	}
+
+	ul {
+		list-style-type: none;
+
+		.children {
+			padding-top: 2em;
+			padding-left: 2em;
+
+			.children {
+				padding-left: 4em;
+
+				.children {
+					padding-left: 6em;
+				}
+			}
+		}
+	}
+
+	li {
+		margin-left: 0;
+	}
+
+	.comment-meta {
+		font-size: 12px;
+		opacity: .5;
+		margin-bottom: 1em;
+	}
+
+	.depth-1 {
+		margin-bottom: 4em;
+	}
+}
+
+.sidebar {
+	position: fixed;
+	height: 100vh;
+	left: 0;
+	top: 0;
+	width: $sidebar-width;
+	background-color: #ffffff;
+	z-index: 6;
+	border-right: 2px solid rgba(0,0,0,0.14);
+
+	a {
+		color: $text-color;
+	}
+
+	h3 {
+		font-size: 14px;
+		font-weight: bold;
+		margin-bottom: 2em;
+		margin-top: 0;
+		padding: 0;
+	}
+
+	ul {
+		list-style-type: none;
+	}
+
+	.branding {
+		height: $header-height + 2px;
+		line-height: $header-height + 2px;
+		padding-left: 28px;
+		box-sizing: border-box;
+		border-bottom: 2px solid rgba(0,0,0,0.14);
+		font-family: 'Roboto', sans-serif;
+		font-size: 20px;
+	}
+
+	.widgets {
+		ul {
+			margin-top: -1em;
+			margin-bottom: -1em;
+		}
+	}
+
+	li {
+		font-weight: bold;
+		font-family: 'Roboto', sans-serif;
+		padding-bottom: 2em;
+		letter-spacing: .1px;
+		margin-left: 0;
+
+		li {
+			font-size: 13px;
+			font-weight: 400;
+			padding-bottom: 1em;
+			padding-left: 2em;
+			height: 1.5em;
+			line-height: 2em;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+	}
+
+	.sidebar-content {
+		font-size: 14px;
+		padding: 2em;
+	}
+}
