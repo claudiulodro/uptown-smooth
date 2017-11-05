@@ -1,3 +1,47 @@
+/**
+ * Variables.
+ */
+/**
+ * Reset everything.
+ */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  font-size: 100%;
+  font: inherit;
+  padding: 0;
+  border: 0;
+  margin: 0;
+  vertical-align: baseline; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+.clear {
+  clear: both; }
+
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important; }
+
+/**
+ * Generic item CSS.
+ */
 a {
   text-decoration: none; }
 
@@ -41,6 +85,9 @@ body {
   body.admin-bar .sidebar .search-container {
     margin-top: 32px; }
 
+/**
+ * Navigation bar.
+ */
 .header {
   position: fixed;
   top: 0;
@@ -82,6 +129,9 @@ body {
       height: 48px;
       width: auto; }
 
+/**
+ * Mobile open/close menu buttons.
+ */
 .open-menu,
 .close-menu {
   position: fixed;
@@ -100,6 +150,9 @@ body {
     cursor: pointer;
     line-height: 45px; }
 
+/**
+ * Site content containers.
+ */
 .site-container {
   padding-top: 70px;
   width: 100%;
@@ -151,6 +204,9 @@ article, #comments {
 .single article, .page article {
   box-shadow: none; }
 
+/**
+ * Comments.
+ */
 #comments .comments-title {
   padding-top: 0; }
 #comments img {
@@ -181,6 +237,9 @@ article, #comments {
 #comments .depth-1 {
   margin-bottom: 4em; }
 
+/**
+ * Sidebar.
+ */
 .sidebar {
   position: fixed;
   height: 100vh;
@@ -255,6 +314,9 @@ article, #comments {
     overflow-y: auto;
     max-height: calc(100vh - 161px); }
 
+/**
+ * Next/Prev archive page section.
+ */
 .navigation {
   height: 6em;
   font-size: 18px;
@@ -274,6 +336,9 @@ article, #comments {
     bottom: 2em;
     right: 1em; }
 
+/**
+ * Site footer.
+ */
 .footer {
   text-align: center;
   font-size: 13px;
@@ -289,6 +354,9 @@ article, #comments {
     margin-left: 1em;
     margin-right: 1em; }
 
+/**
+ * Mobile styles.
+ */
 @media screen and (max-width: 1000px) {
   .sidebar {
     left: -386px;

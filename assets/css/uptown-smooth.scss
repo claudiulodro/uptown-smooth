@@ -1,15 +1,24 @@
+/**
+ * Variables.
+ */
 $bg-color: #fbfbfb;
 $text-color: #212121;
 $card-bg-color: #F5F5F6;
 
-$site-width: 1200px;
 $header-height: 70px;
-$card-width: 1000px;
 $sidebar-width: 255px;
 
 $shadow: 0 2px 5px rgba(0,0,0,.26);
-$shadow-high: 0 4px 8px rgba(0,0,0,.26);
 
+/**
+ * Reset everything.
+ */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{font-size:100%;font:inherit;padding:0;border:0;margin:0;vertical-align:baseline}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}.clear{clear:both}
+.sticky{}.bypostauthor{}.wp-caption{}.wp-caption-text{}.gallery-caption{}.alignright{}.alignleft{}.aligncenter{}.screen-reader-text{clip:rect(1px, 1px, 1px, 1px);position:absolute !important}
+
+/**
+ * Generic item CSS.
+ */
 a {
 	text-decoration: none;
 }
@@ -71,6 +80,9 @@ body {
 	}
 }
 
+/**
+ * Navigation bar.
+ */
 .header {
 	position: fixed;
 	top: 0;
@@ -126,6 +138,9 @@ body {
 
 }
 
+/**
+ * Mobile open/close menu buttons.
+ */
 .open-menu,
 .close-menu {
 	position: fixed;
@@ -146,7 +161,9 @@ body {
 	}
 }
 
-
+/**
+ * Site content containers.
+ */
 .site-container {
 	padding-top: $header-height;
 	width: 100%;
@@ -221,6 +238,9 @@ article, #comments {
 	box-shadow: none;
 }
 
+/**
+ * Comments.
+ */
 #comments {
 	.comments-title {
 		padding-top: 0;
@@ -276,6 +296,9 @@ article, #comments {
 	}
 }
 
+/**
+ * Sidebar.
+ */ 
 .sidebar {
 	position: fixed;
 	height: 100vh;
@@ -379,6 +402,9 @@ article, #comments {
 	}
 }
 
+/**
+ * Next/Prev archive page section.
+ */
 .navigation {
 	height: 6em;
 	font-size: 18px;
@@ -405,6 +431,9 @@ article, #comments {
 	}
 }
 
+/**
+ * Site footer.
+ */
 .footer {
 	text-align: center;
 	font-size: 13px;
@@ -425,7 +454,9 @@ article, #comments {
 	}
 }
 
-// Mobile
+/**
+ * Mobile styles.
+ */
 @media screen and (max-width: 1000px) {
 	.sidebar {
 		left: - $sidebar-width - 131px;

@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Get the potential colors for the color scheme.
+ *
+ * @return array
+ */
 function us_get_hex_colors() {
 	return array(
 		'#000000',
@@ -28,6 +33,9 @@ function us_get_hex_colors() {
 
 if ( class_exists('WP_Customize_Control') ) {
 
+	/**
+	 * Renders a select dropdown of the color scheme.
+	 */
     class US_Customize_Color_Control extends WP_Customize_Control {
 
         public function render_content() {
@@ -37,15 +45,13 @@ if ( class_exists('WP_Customize_Control') ) {
         	?>
         	<select name="<?php echo $this->id ?>">
         		<?php foreach ( $colors as $color ): ?>
-        			<option value="<?php echo $color ?>" style="background-color: <?php echo $color; ?>"><?php echo $color; ?></option>
+        			<option value="<?php echo $color ?>" style="line-height: 2em; background-color: <?php echo $color; ?>"><?php echo $color; ?></option>
         		<?php endforeach; ?>
         	</select>
         	<?php
 
 
             $dropdown = ob_get_clean();
- 
-            // Hackily add in the data link parameter.
             $dropdown = str_replace( '<select', '<select ' . $this->get_link(), $dropdown );
  
             printf(
@@ -57,8 +63,10 @@ if ( class_exists('WP_Customize_Control') ) {
     }
 }
 
+/**
+ * Add the Customizer settings.
+ */
 function us_customize_register( $wp_customize ) {
-
 	$colors = us_get_hex_colors();
 	$color_select = array();
 	foreach ( $colors as $color ) {
@@ -73,10 +81,10 @@ function us_customize_register( $wp_customize ) {
 	) );
 
 	$color_settings = array(
-		'us_primarycolor' => 'Primary Color',
-		'us_secondarycolor' => 'Secondary Color',
-		'us_titlecolor' => 'Title Color',
-		'us_secondaryaccentcolor' => 'Secondary Accent Color (Mobile only)',
+		'us_primarycolor' => __( 'Primary Color', 'uptownsmooth' ),
+		'us_secondarycolor' => __( 'Secondary Color', 'uptownsmooth' ),
+		'us_titlecolor' => __( 'Title Color', 'uptownsmooth' ),
+		'us_secondaryaccentcolor' => __( 'Secondary Accent Color (Mobile only)', 'uptownsmooth' ),
 	);
 
 	foreach ( $color_settings as $setting => $label ) {
@@ -101,6 +109,9 @@ function us_customize_register( $wp_customize ) {
 }
 add_action( 'customize_register', 'us_customize_register' );
 
+/**
+ * Customize the site style based on the selected colors.
+ */
 function us_output_custom_colors() {
 	$colors = us_get_hex_colors();
 	$primary = sanitize_hex_color( get_theme_mod( 'us_primarycolor', $colors[0] ) );
