@@ -1,6 +1,5 @@
 a {
-  text-decoration: none;
-  color: red; }
+  text-decoration: none; }
 
 h1, h2, h3, h4 {
   margin-bottom: 1em;
@@ -29,6 +28,9 @@ hr {
   visibility: hidden;
   height: 2em; }
 
+textarea {
+  max-width: 100%; }
+
 body {
   background-color: #fbfbfb;
   font-size: 16px;
@@ -36,7 +38,7 @@ body {
   color: #212121; }
   body.admin-bar .header {
     top: 32px; }
-  body.admin-bar .sidebar .branding {
+  body.admin-bar .sidebar .search-container {
     margin-top: 32px; }
 
 .header {
@@ -49,18 +51,10 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.26);
   background-color: yellow;
   font-family: 'Roboto', sans-serif;
-  font-size: 18px;
+  font-size: 22px;
   z-index: 5;
   box-sizing: border-box;
   max-width: calc(100% - 255px); }
-  .header .search-field {
-    width: 40px;
-    height: 40px;
-    background: red;
-    overflow: hidden;
-    position: absolute;
-    right: 1em;
-    top: 1em; }
   .header .menu {
     text-align: right;
     position: absolute;
@@ -70,11 +64,41 @@ body {
     .header .menu li {
       float: right;
       margin-right: 2em; }
-  .header .branding {
-    margin-left: 1em; }
   .header .header-content {
-    padding-left: 4em;
-    padding-right: 4em; }
+    padding-left: 5.5vw;
+    padding-right: 4em;
+    height: 70px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
+    .header .header-content.has-logo {
+      padding-left: calc(5.5vw + 64px); }
+  .header .site-logo {
+    height: 48px;
+    position: absolute;
+    left: 5.5vw;
+    top: 10px; }
+    .header .site-logo img {
+      height: 48px;
+      width: auto; }
+
+.open-menu,
+.close-menu {
+  position: fixed;
+  bottom: 1.5em;
+  right: 1.5em;
+  color: white;
+  display: none;
+  z-index: 7;
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  border-radius: 45px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.26); }
+  .open-menu i,
+  .close-menu i {
+    cursor: pointer;
+    line-height: 45px; }
 
 .site-container {
   padding-top: 70px;
@@ -90,10 +114,11 @@ article, #comments {
   padding-bottom: 4em;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.26);
   border-radius: 6px;
-  font-size: 13px;
-  line-height: 24px; }
+  font-size: 1.1vw;
+  line-height: 2vw; }
   article p, #comments p {
-    margin-bottom: 1.5em; }
+    margin-bottom: 1.5em;
+    line-height: 2vw; }
   article h1, article h2, article h3, article h4, #comments h1, #comments h2, #comments h3, #comments h4 {
     line-height: 1.5em; }
   article li, #comments li {
@@ -112,6 +137,8 @@ article, #comments {
       float: right;
       margin-left: 2em;
       margin-bottom: 2em; }
+  article .archive-title, #comments .archive-title {
+    margin-bottom: 0; }
   article.has-post-thumbnail .thumbnail img, #comments.has-post-thumbnail .thumbnail img {
     max-width: 50vh;
     width: 100%;
@@ -121,16 +148,17 @@ article, #comments {
     margin-bottom: 2em;
     margin-left: -5em; }
 
-.single article {
+.single article, .page article {
   box-shadow: none; }
 
 #comments .comments-title {
-  padding-top: 0;
-  color: red; }
+  padding-top: 0; }
 #comments img {
   position: absolute;
   margin: 0;
   left: 0; }
+#comments h3 {
+  padding-top: 0; }
 #comments ul {
   list-style-type: none; }
   #comments ul .children {
@@ -140,8 +168,12 @@ article, #comments {
       padding-left: 4em; }
       #comments ul .children .children .children {
         padding-left: 6em; }
+#comments label {
+  display: block; }
 #comments li {
   margin-left: 0; }
+#comments #reply-title {
+  display: none; }
 #comments .comment-meta {
   font-size: 12px;
   opacity: .5;
@@ -168,14 +200,31 @@ article, #comments {
     padding: 0; }
   .sidebar ul {
     list-style-type: none; }
-  .sidebar .branding {
+  .sidebar .search-container {
     height: 72px;
     line-height: 72px;
     padding-left: 28px;
     box-sizing: border-box;
     border-bottom: 2px solid rgba(0, 0, 0, 0.14);
     font-family: 'Roboto', sans-serif;
-    font-size: 20px; }
+    font-size: 20px;
+    position: relative;
+    color: #e3e3e3; }
+    .sidebar .search-container input[type="text"] {
+      position: absolute;
+      top: 26px;
+      left: 4em;
+      border: none;
+      outline: none;
+      font-size: 14px;
+      width: 152px; }
+      .sidebar .search-container input[type="text"]::placeholder {
+        color: #e3e3e3;
+        font-weight: bold; }
+    .sidebar .search-container i {
+      cursor: pointer;
+      position: absolute;
+      top: 22px; }
   .sidebar .widgets ul {
     margin-top: -1em;
     margin-bottom: -1em; }
@@ -195,8 +244,90 @@ article, #comments {
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap; }
+  .sidebar select {
+    margin-left: 2em;
+    border-radius: 3px; }
+  .sidebar input {
+    margin-bottom: 1em; }
   .sidebar .sidebar-content {
     font-size: 14px;
-    padding: 2em; }
+    padding: 2em;
+    overflow-y: auto;
+    max-height: calc(100vh - 161px); }
+
+.navigation {
+  height: 6em;
+  font-size: 18px;
+  position: relative;
+  text-transform: capitalize; }
+  .navigation .nav-previous a,
+  .navigation .nav-next a {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+    padding: 1em;
+    border-radius: 3px; }
+  .navigation .nav-previous {
+    position: absolute;
+    bottom: 2em;
+    left: 1em; }
+  .navigation .nav-next {
+    position: absolute;
+    bottom: 2em;
+    right: 1em; }
+
+.footer {
+  text-align: center;
+  font-size: 13px;
+  padding-top: 20px;
+  padding-bottom: 20px; }
+  .footer ul {
+    list-style-type: none;
+    padding-bottom: 20px; }
+  .footer li {
+    display: inline;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-left: 1em;
+    margin-right: 1em; }
+
+@media screen and (max-width: 1000px) {
+  .sidebar {
+    left: -386px;
+    transition: left 1s;
+    box-shadow: 0 0px 131px rgba(0, 0, 0, 0.36); }
+
+  .site-container {
+    max-width: 100%;
+    margin-left: 0; }
+
+  .header {
+    max-width: 100%;
+    left: 0; }
+    .header .header-content {
+      padding-right: 0;
+      padding-left: 45px; }
+      .header .header-content.has-logo {
+        padding-left: 110px; }
+    .header .site-logo {
+      left: 45px !important; }
+
+  article, #comments {
+    font-size: 15px;
+    line-height: 24px;
+    padding-left: 3em !important;
+    padding-right: 3em !important; }
+    article p, #comments p {
+      line-height: 24px; }
+    article img, #comments img {
+      float: none !important; }
+
+  .open-menu {
+    display: inline-block; }
+
+  body.menu-open .sidebar {
+    left: 0; }
+  body.menu-open .open-menu {
+    display: none; }
+  body.menu-open .close-menu {
+    display: inline-block; } }
 
 /*# sourceMappingURL=uptown-smooth.css.map */

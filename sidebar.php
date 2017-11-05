@@ -1,15 +1,11 @@
 <aside class="sidebar">
-	<section class="branding">
-		<?php if ( $logo = get_custom_logo() ): ?>
-			<div class="site-logo">
-				<?php echo $logo; ?>
-			</div>
-		<?php endif; ?>
-
-		<div class="site-title">
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-				<?php echo esc_html( get_bloginfo( 'name' ) ); ?>
-			</a>
+	<section class="search-container">
+		<div class="search">
+			<form role="search" method="get" action="<?php echo site_url() ?>">
+				<i class="material-icons submit-search">search</i>		
+				<input type="text" name="s" placeholder="Search" />
+				<input type="submit" value="Search" style="display:none" />
+			</form>
 		</div>
 	</section>
 
