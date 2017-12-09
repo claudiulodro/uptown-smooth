@@ -1,6 +1,13 @@
 <?php
 
 /**
+ * Get the version of the theme.
+ */
+function us_get_version() {
+	return '1.0.1';
+}
+
+/**
  * Register the theme supports and menus.
  */
 function us_theme_setup() {

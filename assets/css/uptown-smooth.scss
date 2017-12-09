@@ -198,20 +198,19 @@ article, #comments {
 	img {
 		box-shadow: $shadow;
 		border-radius: 3px;
-		max-width: 100%;
+		max-width: calc(100% - 4em);
 		height: auto;
-		margin-left: -5em;
+		margin: 2em;
+		margin-left: 0;
+		display: block;
 
 		&.alignleft {
 			float: left;
-			margin-right: 2em;
-			margin-bottom: 2em;
 		}
 
 		&.alignright {
 			float: right;
-			margin-left: 2em;
-			margin-bottom: 2em;
+			margin-right: 0;
 		}
 	}
 
@@ -228,7 +227,8 @@ article, #comments {
 				float: left;
 				margin-right: 2em;
 				margin-bottom: 2em;
-				margin-left: -5em;
+				margin-left: 0;
+				margin-top: 0;
 			}
 		}
 	}
@@ -377,11 +377,7 @@ article, #comments {
 			font-weight: 400;
 			padding-bottom: 1em;
 			padding-left: 2em;
-			height: 1.5em;
-			line-height: 2em;
-			overflow: hidden;
-			text-overflow: ellipsis;
-			white-space: nowrap;
+			line-height: 1.2em;
 		}
 	}
 

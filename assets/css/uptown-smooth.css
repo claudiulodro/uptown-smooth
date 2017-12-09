@@ -179,17 +179,16 @@ article, #comments {
   article img, #comments img {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
     border-radius: 3px;
-    max-width: 100%;
+    max-width: calc(100% - 4em);
     height: auto;
-    margin-left: -5em; }
+    margin: 2em;
+    margin-left: 0;
+    display: block; }
     article img.alignleft, #comments img.alignleft {
-      float: left;
-      margin-right: 2em;
-      margin-bottom: 2em; }
+      float: left; }
     article img.alignright, #comments img.alignright {
       float: right;
-      margin-left: 2em;
-      margin-bottom: 2em; }
+      margin-right: 0; }
   article .archive-title, #comments .archive-title {
     margin-bottom: 0; }
   article.has-post-thumbnail .thumbnail img, #comments.has-post-thumbnail .thumbnail img {
@@ -199,7 +198,8 @@ article, #comments {
     float: left;
     margin-right: 2em;
     margin-bottom: 2em;
-    margin-left: -5em; }
+    margin-left: 0;
+    margin-top: 0; }
 
 .single article, .page article {
   box-shadow: none; }
@@ -298,11 +298,7 @@ article, #comments {
       font-weight: 400;
       padding-bottom: 1em;
       padding-left: 2em;
-      height: 1.5em;
-      line-height: 2em;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap; }
+      line-height: 1.2em; }
   .sidebar select {
     margin-left: 2em;
     border-radius: 3px; }
