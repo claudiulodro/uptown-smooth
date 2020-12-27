@@ -4,7 +4,7 @@
 body {
 	background-color: $bg-color;
 	font-size: 16px;
-	font-family: 'Noto Sans', sans-serif;
+	font-family: 'Noto Serif', serif;
 	color: $text-color;
 
 	// Logged-in admin styles.
@@ -31,11 +31,12 @@ body {
 	line-height: $header-height;
 	box-shadow: 0 4px 8px rgba(0,0,0,.26);
 	background-color: yellow;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Press Start 2P', monospace;
 	font-size: 22px;
 	z-index: 5;
 	box-sizing: border-box;
 	max-width: calc(100% - 255px);
+	display: flex;
 
 	.menu {
 		text-align: right;
@@ -59,15 +60,14 @@ body {
 		white-space: nowrap;
 
 		&.has-logo {
-			padding-left: calc(5.5vw + 64px);
+			padding-left: 1em;	
 		}
 	}
 
 	.site-logo {
 		height: 48px;
-		position: absolute;
-		left: 5.5vw;
-		top: 10px;
+		margin-left: 5.5vw;
+		margin-top: 0.5em;
 
 		img {
 			height: 48px;
@@ -206,6 +206,10 @@ article, #comments {
 	td {
 		padding: 0.5em;
 	}
+
+	.has-drop-cap:not(:focus):first-letter {
+		font-family: 'Press Start 2P';
+	}
 }
 
 .single article, .page article {
@@ -305,18 +309,18 @@ article, #comments {
 		padding-left: 28px;
 		box-sizing: border-box;
 		border-bottom: 2px solid rgba(0,0,0,0.14);
-		font-family: 'Roboto', sans-serif;
+		font-family: 'Press Start 2P', monospace;
 		font-size: 20px;
 		position: relative;
 		color: #e3e3e3;
 
 		input[type="text"] {
 			position: absolute;
-			top: 26px;
-			left: 4em;
+			top: 18px;
+			left: 3.5em;
 			border: none;
 			outline: none;
-			font-size: 14px;
+			font-size: 16px;
 			width: 152px;
 
 			&::placeholder {
@@ -341,7 +345,7 @@ article, #comments {
 
 	li {
 		font-weight: bold;
-		font-family: 'Roboto', sans-serif;
+		font-family: 'Noto Serif', sans-serif;
 		padding-bottom: 2em;
 		letter-spacing: .1px;
 		margin-left: 0;
@@ -446,10 +450,7 @@ article, #comments {
 		.header-content {
 			padding-right: 0;
 			padding-left: 45px;
-
-			&.has-logo {
-				padding-left: 110px;
-			}
+			font-size: 16px;
 		}
 
 		.site-logo {
@@ -462,10 +463,6 @@ article, #comments {
 		line-height: 24px;
 		padding-left: 3em!important;
 		padding-right: 3em!important;
-
-		p {
-			line-height: 24px;
-		}
 
 		img {
 			float: none!important;
@@ -488,6 +485,28 @@ article, #comments {
 		.close-menu {
 			display: inline-block;
 		}
+	}
+
+	article .wp-block-image figcaption {
+		font-size: 10px;
+	}
+
+	article .wp-block-text-columns {
+		display: block;
+
+		.wp-block-column {
+			width: 100%!important;
+			margin: 0;
+		}
+	}
+}
+
+/**
+ * WooCommerce
+ */
+body.woocommerce {
+	span.onsale {
+		z-index: 4;
 	}
 }
 

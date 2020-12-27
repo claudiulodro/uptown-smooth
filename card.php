@@ -12,7 +12,7 @@
 		</h1>
 	</header>
 
-	<?php if ( has_post_thumbnail() ): ?>
+	<?php if ( has_post_thumbnail() && ! is_singular() ): ?>
 		<div class="thumbnail">
 			<?php the_post_thumbnail(); ?>
 		</div>

@@ -14,8 +14,9 @@ a {
 h1, h2, h3, h4, h5, h6 {
 	margin-bottom: 1em;
 	padding-top: 2em;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Noto Serif', serif;
 	font-weight: bold;
+	text-transform: uppercase;
 }
 
 h1 {
@@ -63,4 +64,23 @@ hr {
 
 textarea {
 	max-width: 100%;
+}
+
+strong, b, em, i {
+	font-family: 'Press Start 2P', monospace;
+	vertical-align: bottom;
+	word-spacing: -.5em;
+}
+
+figcaption {
+	font-family: 'Press Start 2P', monospace;
+}
+
+blockquote {
+	font-family: 'Press Start 2P', monospace;
+	text-transform: uppercase;
+}
+
+input[type="number"], input[type="text"] {
+	height: 2em;
 }

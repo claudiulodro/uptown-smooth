@@ -16,6 +16,7 @@ function us_theme_setup() {
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'align-wide' );
+	add_theme_support( 'custom-logo' );
 
 	register_nav_menus(
 		array( 

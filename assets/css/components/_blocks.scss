@@ -14,6 +14,11 @@ article, #comments {
 
 	.wp-block-cover {
 		margin-bottom: 1em;
+		text-transform: uppercase;
+
+		p {
+			font-family: 'Press Start 2P', monospace;
+		}
 	}
 
 	.wp-block-gallery {
@@ -103,6 +108,16 @@ article, #comments {
 		background-color: white;
 		padding: 2em;
 		box-shadow: $shadow;
+		overflow-x: auto;
+
+		code,
+		pre {
+			white-space: inherit;
+		}
+	}
+
+	.wp-block-verse {
+		white-space: inherit;
 	}
 
 	.wp-block-table.alignfull {
@@ -125,7 +140,6 @@ article, #comments {
 
 		a {
 			font-weight: bold;
-			text-decoration: none;
 		}
 	}
 
@@ -137,12 +151,23 @@ article, #comments {
 	.wp-block-latest-posts__featured-image {
 		img {
 			margin-bottom: .5em;
+			max-width: 100%;
+			margin-left: auto;
+			margin-right: auto;
 		}
 
 		&.alignleft img {
 			float: left;
 			margin-top: 0;
 			margin-bottom: 2em;
+			margin-right: 2em;
+		}
+
+		&.alignright img {
+			float: right;
+			margin-top: 0;
+			margin-bottom: 2em;
+			margin-left: 2em;
 		}
 	}
 
@@ -184,5 +209,17 @@ article, #comments {
 			padding-left: 2em;
 			padding-right: 3em;
 		}
+	}
+
+	.wc-block-grid__products .wc-block-grid__product-image img {
+		width: auto;
+		max-width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.wp-block-button {
+		font-family: 'Press Start 2P', monospace;
+		text-transform: uppercase;
 	}
 }
