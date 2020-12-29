@@ -10,8 +10,6 @@
 	</section>
 
 	<div class="sidebar-content">
-		<?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
-
 		<?php if ( is_active_sidebar( 'primary-widget-area' ) ) : ?>
 			<div class="widget-container">
 				<ul class="widgets">
@@ -19,5 +17,6 @@
 				</ul>
 			</div>
 		<?php endif; ?>
+		<?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
 	</div>
 </aside>

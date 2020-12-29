@@ -288,7 +288,7 @@ article, #comments {
 	border-right: 2px solid rgba(0,0,0,0.14);
 
 	a {
-		color: $text-color;
+		text-decoration: underline;
 	}
 
 	h3 {
@@ -336,10 +336,15 @@ article, #comments {
 		}
 	}
 
-	.widgets {
-		ul {
-			margin-top: -1em;
-			margin-bottom: -1em;
+	.widget_recent_entries {
+		li {
+			a {
+				font-weight: bold;
+			}
+
+			.post-date {
+				display: block;
+			}
 		}
 	}
 
@@ -354,7 +359,7 @@ article, #comments {
 			font-size: 13px;
 			font-weight: 400;
 			padding-bottom: 1em;
-			padding-left: 2em;
+			padding-left: 0;
 			line-height: 1.2em;
 		}
 	}

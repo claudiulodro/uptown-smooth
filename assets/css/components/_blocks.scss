@@ -222,4 +222,18 @@ article, #comments {
 		font-family: 'Press Start 2P', monospace;
 		text-transform: uppercase;
 	}
+
+	.wp-block-buttons {
+		&.alignright {
+			.wp-block-button {
+				float: right;
+			}
+		}
+
+		&.alignleft {
+			.wp-block-button {
+				float: left;
+			}
+		}
+	}
 }

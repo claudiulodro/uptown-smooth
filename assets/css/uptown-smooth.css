@@ -306,7 +306,7 @@ article, #comments {
   z-index: 6;
   border-right: 2px solid rgba(0, 0, 0, 0.14); }
   .sidebar a {
-    color: #212121; }
+    text-decoration: underline; }
   .sidebar h3 {
     font-size: 14px;
     font-weight: bold;
@@ -340,9 +340,10 @@ article, #comments {
       cursor: pointer;
       position: absolute;
       top: 22px; }
-  .sidebar .widgets ul {
-    margin-top: -1em;
-    margin-bottom: -1em; }
+  .sidebar .widget_recent_entries li a {
+    font-weight: bold; }
+  .sidebar .widget_recent_entries li .post-date {
+    display: block; }
   .sidebar li {
     font-weight: bold;
     font-family: 'Noto Serif', sans-serif;
@@ -353,7 +354,7 @@ article, #comments {
       font-size: 13px;
       font-weight: 400;
       padding-bottom: 1em;
-      padding-left: 2em;
+      padding-left: 0;
       line-height: 1.2em; }
   .sidebar select {
     margin-left: 2em;
@@ -604,5 +605,9 @@ article .wc-block-grid__products .wc-block-grid__product-image img, #comments .w
 article .wp-block-button, #comments .wp-block-button {
   font-family: 'Press Start 2P', monospace;
   text-transform: uppercase; }
+article .wp-block-buttons.alignright .wp-block-button, #comments .wp-block-buttons.alignright .wp-block-button {
+  float: right; }
+article .wp-block-buttons.alignleft .wp-block-button, #comments .wp-block-buttons.alignleft .wp-block-button {
+  float: left; }
 
 /*# sourceMappingURL=uptown-smooth.css.map */
